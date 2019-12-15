@@ -1,0 +1,50 @@
+#!/bin/bash
+
+NAME="$(basename "$0")"
+
+usage() {
+    echo "$NAME: usage: $NAME [-f filename | -a]"
+    return
+}
+
+args=
+filename="untitled.c"
+cmakefile="CMakeLists.txt"
+
+while [[ -n "$1" ]]; do
+    case "$1" in
+        -f | --file)
+            shift
+            filename="$1"
+            ;;
+        -a | --args)
+            args="int argc, char *argv[]"
+            ;;
+        -h | --help)
+            usage
+            exit
+            ;;
+        *)
+            usage >&2
+            exit 42
+            ;;
+    esac
+    shift
+done
+
+if [[ -e "$filename" ]]; then
+    echo "$filename exists, cannot create new file..." >&2
+    exit 42
+fi
+
+cat << _EOF_ > "$filename"
+#include "unixprog.h"
+
+int main($args) {
+    exit(0);
+}
+_EOF_
+
+echo "add_executable(${filename%%.*} $filename)" >> "$cmakefile"
+echo "target_link_libraries(${filename%%.*} unixprog)" >> "$cmakefile"
+echo >> "$cmakefile"
