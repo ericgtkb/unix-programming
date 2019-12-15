@@ -1,6 +1,4 @@
 #include "unixprog.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <dirent.h>
 
 int main(int argc, char *argv[]) {
@@ -8,13 +6,10 @@ int main(int argc, char *argv[]) {
     struct dirent *entry;
 
     if (argc != 2) {
-        fprintf(stderr, "Usage: ls directory_name\n");
-        exit(42);
+        unixprog_error_quit("Usage: ls directory_name\n");
     }
     if ((dir = opendir(argv[1])) == NULL) {
-        fprintf(stderr, "Can't open %s: ", argv[1]);
-        unixprog_print_sys_error();
-        exit(42);
+        unixprog_sys_error_quit("Can't open %s", argv[1]);
     }
 
     while ((entry = readdir(dir)) != NULL) {
