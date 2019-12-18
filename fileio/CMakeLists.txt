@@ -7,3 +7,6 @@ target_link_libraries(seek unixprog)
 add_executable(hole hole.c)
 target_link_libraries(hole unixprog)
 
+add_executable(fileflags fileflags.c)
+target_link_libraries(fileflags unixprog)
+

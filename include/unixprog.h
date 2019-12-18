@@ -20,5 +20,6 @@
 void unixprog_error_return(const char *format, ...);
 void unixprog_error_quit(const char *format, ...);
 void unixprog_sys_error_quit(const char *format, ...);
+void unixprog_sys_error_dump(const char *format, ...);
 
 #endif //UNIX_PROGRAMMING_UNIXPROG_H
