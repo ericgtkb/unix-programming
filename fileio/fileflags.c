@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
     if (val & O_SYNC) {
         printf(", synchronous writes");
     }
+// Not required for both macOS and Linux
 #if !defined(_POSIX_C_SOURCE) && defined(O_FSYNC) && (O_FSYNC != O_SYNC)
     if (val & O_FSYNC) {
         printf(", synchronous writes");
