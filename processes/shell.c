@@ -23,7 +23,7 @@ int main() {
             unixprog_sys_error_quit("Fork error");
         } else if (pid == 0) {  // Child
             execlp(buf, buf, (char *) 0);
-            unixprog_error_return("Couldn't execute: %s", buf);
+            unixprog_sys_error_return("Couldn't execute: %s", buf);
             exit(42);
         }
 
