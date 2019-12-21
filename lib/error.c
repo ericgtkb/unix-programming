@@ -6,7 +6,7 @@ static void print_with_sys_error(const char *format, va_list ap);
 
 // Fatal error unrelated to a system call
 // Print error message and exit
-void unixprog_error_quit(const char *format, ...) {
+void unixprog_error_quit(const char *format, ...) {  // TODO: fix it so that we don't need '\n'
     va_list ap;
     va_start(ap, format);
     vfprintf(stderr, format, ap);

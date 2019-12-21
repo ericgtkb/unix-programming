@@ -19,3 +19,15 @@ target_link_libraries(chmod unixprog)
 add_executable(unlink unlink.c)
 target_link_libraries(unlink unixprog)
 
+add_executable(time time.c)
+target_link_libraries(time unixprog)
+
+add_executable(chdir chdir.c)
+target_link_libraries(chdir unixprog)
+
+add_executable(getcwd getcwd.c)
+target_link_libraries(getcwd unixprog)
+
+add_executable(devrdev devrdev.c)
+target_link_libraries(devrdev unixprog)
+
