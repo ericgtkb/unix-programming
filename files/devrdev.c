@@ -1,4 +1,7 @@
 #include "unixprog.h"
+#ifdef __linux__
+#include <sys/sysmacros.h>
+#endif
 
 int main(int argc, char *argv[]) {
     struct stat statbuf;

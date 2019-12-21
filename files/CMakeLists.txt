@@ -31,3 +31,6 @@ target_link_libraries(getcwd unixprog)
 add_executable(devrdev devrdev.c)
 target_link_libraries(devrdev unixprog)
 
+add_executable(traverse traverse.c)
+target_link_libraries(traverse unixprog)
+

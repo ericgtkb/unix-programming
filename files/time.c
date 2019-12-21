@@ -22,6 +22,9 @@ int main(int argc, char *argv[]) {
 #ifdef __APPLE__
         times[0] = statbuf.st_atimespec;
         times[1] = statbuf.st_mtimespec;
+#else
+        times[0] = statbuf.st_atim;
+        times[1] = statbuf.st_mtim;
 #endif
         if (futimens(fd, times) < 0) {
             unixprog_sys_error_return("%s: futimens error", argv[i]);
