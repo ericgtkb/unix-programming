@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
         unixprog_sys_error_quit("chdir failed");
     }
 
-    cwd = path_alloc(&size);  // Defined in unixprog.h
+    cwd = unixprog_path_alloc(&size);  // Defined in unixprog.h
     if (getcwd(cwd, size) == NULL) {
         unixprog_sys_error_quit("getcwd failed");
     }

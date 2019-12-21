@@ -4,7 +4,7 @@
 static void sig_int(int signo);
 
 int main() {
-    char buf[MAXLEN];
+    char buf[UNIXPROG_MAXLEN];
     pid_t pid;
     int status;
 
@@ -13,7 +13,7 @@ int main() {
     }
 
     printf("%% ");  // Shell prompt
-    while (fgets(buf, MAXLEN, stdin) != NULL) {  // When we type end-of-file character fgets returns NULL
+    while (fgets(buf, UNIXPROG_MAXLEN, stdin) != NULL) {  // When we type end-of-file character fgets returns NULL
         if (buf[strlen(buf) - 1] == '\n') {
             // fgets returns a string terminated with '\n'. We change is to to a null character for execlp
             buf[strlen(buf) - 1] = 0;  // Replace newline with null

@@ -7,7 +7,7 @@ char buf2[] = "ABCDEFGHIJ";
 int main() {
     int fd;
 
-    if ((fd = creat("file.hole", FILE_MODE)) < 0) {  // FILE_MODE defined in unixprog.h
+    if ((fd = creat("file.hole", UNIXPROG_FILE_MODE)) < 0) {  // UNIXPROG_FILE_MODE defined in unixprog.h
         unixprog_sys_error_quit("creat error");
     }
     if (write(fd, buf1, 10) != 10) {

@@ -15,7 +15,7 @@ static long xsi_version = 0;
 // If PATH_MAX is indeterminate, this is the guess, no guarantee this is adequate
 #define PATH_MAX_GUESS 1024
 
-char *path_alloc(size_t *path_size) {
+char *unixprog_path_alloc(size_t *path_size) {
     // Also return allocated size to path_size
     char *path;
     size_t size;

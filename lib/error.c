@@ -44,7 +44,7 @@ void unixprog_sys_error_dump(const char *format, ...) {
 }
 
 static void print_with_sys_error(const char *format, va_list ap) {
-    char buf[MAXLEN];
-    vsnprintf(buf, MAXLEN - 1, format, ap);
+    char buf[UNIXPROG_MAXLEN];
+    vsnprintf(buf, UNIXPROG_MAXLEN - 1, format, ap);
     perror(buf);
 }

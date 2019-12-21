@@ -11,6 +11,8 @@ static int traverse(char *pathname, process_func *func);
 static int do_path(process_func *func);
 
 static long num_reg, num_dir, num_blk, num_chr, num_fifo, num_slink, num_sock, num_tot;
+
+
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         unixprog_error_quit("Usage: traverse <starting-pathname>");
@@ -85,7 +87,7 @@ static int process_file(const char *pathname, const struct stat *statptr, int ty
 
 // Descend through the hierarchy, starting at pathname, func is called for every file
 static int traverse(char *pathname, process_func *func) {
-    full_path = path_alloc(&path_len);  // Defined in unixprog.h
+    full_path = unixprog_path_alloc(&path_len);  // Defined in unixprog.h
 
     if (path_len <= strlen(pathname)) {
         path_len = strlen(pathname) * 2;
