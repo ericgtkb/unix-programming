@@ -8,4 +8,6 @@ add_subdirectory(files)
 add_subdirectory(fileio)
 add_subdirectory(stdio)
 add_subdirectory(processes)
+add_subdirectory(datafiles)
+add_subdirectory(procenv)
 
