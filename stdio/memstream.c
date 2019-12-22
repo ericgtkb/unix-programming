@@ -2,6 +2,7 @@
 
 #define BUF_SIZE 48
 
+// Memory stream is now also supported in macOS, but the program output is completely different from linux
 int main() {
     FILE *fp;
     char buf[BUF_SIZE];

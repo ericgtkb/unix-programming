@@ -12,3 +12,6 @@ target_link_libraries(mkstemp unixprog)
 add_executable(memstream memstream.c)
 target_link_libraries(memstream unixprog)
 
+add_executable(streambuf streambuf.c)
+target_link_libraries(streambuf unixprog)
+
