@@ -10,3 +10,9 @@ target_link_libraries(printargv unixprog)
 add_executable(printenv printenv.c)
 target_link_libraries(printenv unixprog)
 
+add_executable(jump jump.c)
+target_link_libraries(jump unixprog)
+
+add_executable(resourcelimits resourcelimits.c)
+target_link_libraries(resourcelimits unixprog)
+
