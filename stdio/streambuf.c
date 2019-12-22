@@ -43,22 +43,11 @@ void print_stdio(const char *name, FILE *fp) {
     printf(", buffer size = %d\n", buffer_size(fp));
 }
 
-// For macOS both __SNBF and _IONBF are defined
-#if defined(_IO_UNBUFFERED)
+// For macOS both __SNBF and _IONBF are defined but we need to use fp->_bf.size to get buffer size
+// For linux only _IONBF is defined, and the buffer size is given by fp->_IO_buf_end - fp->_IO_buf_base
 
-int is_unbuffered(FILE *fp) {
-    return fp->_flags & _IO_UNBUFFERED;
-}
-
-int is_linebuffered(FILE *fp) {
-    return fp->_flags & _IO_LINE_BUF;
-}
-
-int buffer_size(FILE *fp) {
-    return fp->_IO_buf_end - fp->_IO_buf_base;
-}
-
-#elif defined(__SNBF)
+// macOS
+#if defined(__SNBF)
 
 int is_unbuffered(FILE *fp) {
     return fp->_flags & __SNBF;
@@ -72,6 +61,7 @@ int buffer_size(FILE *fp) {
     return fp->_bf._size;
 }
 
+// linux
 #elif defined(_IONBF)
 
 int is_unbuffered(FILE *fp) {
