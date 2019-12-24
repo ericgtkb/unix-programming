@@ -20,6 +20,7 @@
 // All functions are prefixed with unixprog
 
 // Functions for error handling, lib/error.c
+void unixprog_error_return(const char *format, ...);
 void unixprog_error_quit(const char *format, ...);
 void unixprog_sys_error_return(const char *format, ...);
 void unixprog_sys_error_quit(const char *format, ...);

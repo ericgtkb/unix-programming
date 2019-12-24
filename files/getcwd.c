@@ -3,7 +3,7 @@
 // Change directory, and print working directory
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        unixprog_error_quit("Usage: getcwd directory_name\n");
+        unixprog_error_quit("Usage: getcwd directory_name");
     }
 
     char *cwd;

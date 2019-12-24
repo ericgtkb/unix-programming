@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
     struct dirent *entry;
 
     if (argc != 2) {
-        unixprog_error_quit("Usage: ls directory_name\n");
+        unixprog_error_quit("Usage: ls directory_name");
     }
     if ((dir = opendir(argv[1])) == NULL) {
         unixprog_sys_error_quit("Can't open %s", argv[1]);
