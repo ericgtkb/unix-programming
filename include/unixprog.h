@@ -26,6 +26,10 @@ void unixprog_sys_error_return(const char *format, ...);
 void unixprog_sys_error_quit(const char *format, ...);
 void unixprog_sys_error_dump(const char *format, ...);
 
-// path_alloc function, allocate space for path name depending on platform specifics, lib/pathalloc.c
+// path_alloc function, allocates space for path name depending on platform specifics, lib/pathalloc.c
 char *unixprog_path_alloc(size_t *path_size);
+
+// pr_exit function, prints a description of the exit status
+void unixprog_pr_exit(int status);
+
 #endif //UNIX_PROGRAMMING_UNIXPROG_H
