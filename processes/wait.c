@@ -1,4 +1,5 @@
 #include "unixprog.h"
+#include <sys/wait.h>
 
 int main() {
     pid_t pid;
@@ -35,7 +36,7 @@ int main() {
     if ((pid = fork()) < 0) {
         unixprog_sys_error_quit("fork error");
     } else if (pid == 0) {  // Child
-        status / 0;  // generates SIGFPE
+        status /= 0;  // generates SIGFPE
     }
 
     if (wait(&status) != pid) { // Wait for child
