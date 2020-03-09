@@ -19,3 +19,21 @@ target_link_libraries(wait unixprog)
 add_executable(forktwice forktwice.c)
 target_link_libraries(forktwice unixprog)
 
+add_executable(echoall echoall.c)
+target_link_libraries(echoall unixprog)
+
+add_executable(exec exec.c)
+target_link_libraries(exec unixprog)
+
+add_executable(interp interp.c)
+target_link_libraries(interp unixprog)
+
+add_executable(testsystem testsystem.c)
+target_link_libraries(testsystem unixprog)
+
+add_executable(usesystem usesystem.c)
+target_link_libraries(usesystem unixprog)
+
+add_executable(printuids printuids.c)
+target_link_libraries(printuids unixprog)
+

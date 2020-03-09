@@ -1,0 +1,2 @@
+#!/Users/ericchen/Projects/unix-programming/cmake-build-debug/procenv/printargv foo
+# Change this to wherever print argv is located
