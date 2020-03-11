@@ -37,3 +37,9 @@ target_link_libraries(usesystem unixprog)
 add_executable(printuids printuids.c)
 target_link_libraries(printuids unixprog)
 
+add_executable(nice nice.c)
+target_link_libraries(nice unixprog)
+
+add_executable(times times.c)
+target_link_libraries(times unixprog)
+

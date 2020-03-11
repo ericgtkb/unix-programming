@@ -1,7 +1,7 @@
 #include "unixprog.h"
 #include <sys/wait.h>
 
-void unixprog_pr_exit(int status) {
+void unixprog_print_exit(int status) {
     if (WIFEXITED(status)) {
         printf("Normal termination, exit status = %d\n", WEXITSTATUS(status));
     } else if (WIFSIGNALED(status)) {

@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     if ((status = system(argv[1])) < 0) {
         unixprog_sys_error_quit("system() error");
     }
-    unixprog_pr_exit(status);
+    unixprog_print_exit(status);
 
     exit(0);
 }

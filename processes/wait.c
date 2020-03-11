@@ -16,7 +16,7 @@ int main() {
     if (wait(&status) != pid) { // Wait for child
         unixprog_sys_error_quit("wait error");
     }
-    unixprog_pr_exit(status);
+    unixprog_print_exit(status);
 
 
     // Abort
@@ -29,7 +29,7 @@ int main() {
     if (wait(&status) != pid) { // Wait for child
         unixprog_sys_error_quit("wait error");
     }
-    unixprog_pr_exit(status);
+    unixprog_print_exit(status);
 
 
     // Divide by 0 signal
@@ -42,7 +42,7 @@ int main() {
     if (wait(&status) != pid) { // Wait for child
         unixprog_sys_error_quit("wait error");
     }
-    unixprog_pr_exit(status);
+    unixprog_print_exit(status);
 
     exit(0);
 }

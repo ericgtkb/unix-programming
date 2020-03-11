@@ -30,6 +30,6 @@ void unixprog_sys_error_dump(const char *format, ...);
 char *unixprog_path_alloc(size_t *path_size);
 
 // pr_exit function, prints a description of the exit status
-void unixprog_pr_exit(int status);
+void unixprog_print_exit(int status);
 
 #endif //UNIX_PROGRAMMING_UNIXPROG_H
