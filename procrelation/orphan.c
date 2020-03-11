@@ -21,6 +21,7 @@ int main() {
         sleep(5);
     } else {  // Child
         print_ids("Child");
+        // On linux (Ubuntu) the child is picked up by systemd instead.
         signal(SIGHUP, sig_hup);  // Establish signal handler
         kill(getpid(), SIGTSTP);  // Stop ourself
         print_ids("Child");  // Print only if we're continued
