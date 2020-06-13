@@ -11,4 +11,5 @@ add_subdirectory(processes)
 add_subdirectory(datafiles)
 add_subdirectory(procenv)
 add_subdirectory(procrelation)
+add_subdirectory(signals)
 
