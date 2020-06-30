@@ -1,7 +1,7 @@
 #include "unixprog.h"
 #include <errno.h>
 
-void print_mask(const char *str) {
+void unixprog_print_mask(const char *str) {
     sigset_t sigset;
     int errno_save;
 
